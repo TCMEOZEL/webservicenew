@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--<property name="connection.url">
+            jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=hizirreis.turkcell.tgc)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=SEVASDEV)))
+        </property>-->
+
+        <property name="connection.url">
+            jdbc:oracle:thin:@paytechdev.turkcell.tgc:1521:paytechdev
+        </property>
+
+        <property name="driverClassName">
+            oracle.jdbc.driver.OracleDriver
+        </property>
+
+        <property name="connection.username">
+            MICROPAYMENT_POOL
+        </property>
+
+        <property name="connection.password">
+            D_MICROPAYMENT_POOL
+        </property>
+
+        <property name = "hibernate.dialect">
+            org.hibernate.dialect.Oracle10gDialect
+        </property>
+
+        <property name = "show_sql">
+            true
+        </property>
+
+        <property name="hibernate.default_schema">
+            MICROPAYMENT_POOL
+        </property>
+
+        <mapping class="com.company.student"/>
+        <mapping class="com.company.teacher"/>
+
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>
